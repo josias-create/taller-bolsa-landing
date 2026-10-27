@@ -11,7 +11,6 @@ const WHATSAPP_URL = 'https://wa.me/51933477243?text=Hola%21%F0%9F%91%8B%F0%9F%8
 // Ejemplo: https://www.youtube.com/watch?v=ABC123XYZ
 // El ID sería: ABC123XYZ
 const YOUTUBE_VIDEO_ID = 'WxBrxPEeM6o';
-const [isMuted, setIsMuted] = React.useState(true); // Controla el estado del audio
 const eventDetails = [{
   icon: Calendar,
   text: 'Sábado 28 de noviembre'
@@ -107,6 +106,7 @@ const faqs = [{
   answer: 'No. Anticonfort Financiero está pensado para personas que ya tomaron la decisión de invertir y necesitan acompañamiento para ejecutar correctamente su primer paso.'
 }];
 const HomePage = () => {
+  const [isMuted, setIsMuted] = useState(true); // Controla el estado del audio
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
