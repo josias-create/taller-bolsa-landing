@@ -488,15 +488,16 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="overflow-hidden rounded-2xl bg-black shadow-2xl transition-transform hover:scale-[1.02]"
               >
                 {/* Proporción exacta de 9:16 para reproductores verticales */}
                 <div className="relative aspect-[9/16] w-full bg-neutral-900">
                   <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={`https://youtube.com{video.id}?rel=0&playsinline=1`}
+                    className="absolute inset-0 h-full w-full border-0"
+                    src={`https://youtube-nocookie.com{video.id}?rel=0&playsinline=1`}
                     title={video.title}
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
