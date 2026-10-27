@@ -11,6 +11,7 @@ const WHATSAPP_URL = 'https://wa.me/51933477243?text=Hola%21%F0%9F%91%8B%F0%9F%8
 // Ejemplo: https://www.youtube.com/watch?v=ABC123XYZ
 // El ID sería: ABC123XYZ
 const YOUTUBE_VIDEO_ID = 'WxBrxPEeM6o';
+const [isMuted, setIsMuted] = React.useState(true); // Controla el estado del audio
 const eventDetails = [{
   icon: Calendar,
   text: 'Sábado 28 de noviembre'
@@ -196,21 +197,40 @@ const HomePage = () => {
             </h1>
 
             <motion.div {...fadeInUp} className="overflow-hidden rounded-2xl bg-black shadow-2xl">
-            <div className="relative aspect-video">
-              {YOUTUBE_VIDEO_ID === 'VIDEO_ID' ? <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
-                  <Video className="mb-4 h-12 w-12 text-primary" />
-                  <p className="text-xl font-bold">
-                    Espacio reservado para tu VSL
-                  </p>
-                  <p className="mt-2 max-w-xl text-sm text-white/70">
-                    Reemplaza la constante YOUTUBE_VIDEO_ID por el ID de tu video
-                    de YouTube. El reproductor ya está configurado para autoplay
-                    sin sonido.
-                  </p>
-                </div> : <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`} title="Anticonfort Financiero - Video de presentación" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />}
-            </div>
-          </motion.div>
+              <div className="relative aspect-video">
+                {YOUTUBE_VIDEO_ID === 'VIDEO_ID' ? (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
+                    <Video className="mb-4 h-12 w-12 text-primary" />
+                    <p className="text-xl font-bold">Espacio reservado para tu VSL</p>
+                    <p className="mt-2 max-w-xl text-sm text-white/70">
+                      Reemplaza la constante YOUTUBE_VIDEO_ID por el ID de tu video de YouTube.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    {/* Iframe dinámico controlado por el estado isMuted */}
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=${isMuted ? 1 : 0}&controls=1&rel=0&playsinline=1`}
+                      title="Anticonfort Financiero - Video de presentación"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      allowFullScreen
+                    />
 
+                    {/* Botón flotante para activar el sonido (solo visible si está muteado) */}
+                    {isMuted && (
+                      <button
+                        onClick={() => setIsMuted(false)}
+                        className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-black shadow-lg transition-transform hover:scale-105 active:scale-95 animate-bounce"
+                        style={{ animationDuration: '2s' }}
+                      >
+                        <span>🔊 Activar Sonido</span>
+                      </button>
+                    )}
+                  </>
+                )}
+              </div>
+            </motion.div>
             <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-white/90 md:text-2xl">
               En cuatro horas harás tu primera inversión en bolsa con dinero
               real y aprenderás, paso a paso, cómo declarar tus ganancias en
