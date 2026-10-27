@@ -11,6 +11,11 @@ const WHATSAPP_URL = 'https://wa.me/51933477243?text=Hola%21%F0%9F%91%8B%F0%9F%8
 // Ejemplo: https://www.youtube.com/watch?v=ABC123XYZ
 // El ID sería: ABC123XYZ
 const YOUTUBE_VIDEO_ID = 'WxBrxPEeM6o';
+const TESTIMONIAL_VIDEOS = [
+  { id: 'ZAYG0ccYHiA', title: 'Testimonio 1' },
+  { id: 'uvZmnBvxmWo', title: 'Testimonio 2' },
+  { id: 'QtCqYmdmpYY', title: 'Testimonio 3' }
+];
 const eventDetails = [{
   icon: Calendar,
   text: 'Sábado 28 de noviembre'
@@ -108,6 +113,7 @@ const faqs = [{
 const HomePage = () => {
   const [isMuted, setIsMuted] = useState(true); // Controla el estado del audio
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener('scroll', handleScroll);
@@ -455,6 +461,64 @@ const HomePage = () => {
             <p className="mt-8 text-2xl font-bold text-primary">
               Eso es exactamente lo que haremos durante cuatro horas.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+       {/* Testimonios Verticales */}
+      <section className="bg-background py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeInUp} className="mb-12 text-center">
+            <p className="mb-3 font-bold uppercase tracking-[0.16em] text-primary">
+              Resultados reales
+            </p>
+            <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+              Escucha a quienes ya dieron el paso
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Ellos estuvieron en la misma posición en la que tú estás hoy y transformaron sus dudas en inversiones concretas.
+            </p>
+          </motion.div>
+
+          {/* Grid responsivo: 1 columna en móvil, 3 columnas desde pantallas medianas (MD) */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-3xl mx-auto">
+            {TESTIMONIAL_VIDEOS.map((video, index) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="overflow-hidden rounded-2xl bg-black shadow-2xl transition-transform hover:scale-[1.02]"
+              >
+                {/* Proporción exacta de 9:16 para reproductores verticales */}
+                <div className="relative aspect-[9/16] w-full bg-neutral-900">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://youtube.com{video.id}?rel=0&playsinline=1`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="bg-card p-4 text-center border-t border-muted/20">
+                  <p className="text-sm font-semibold text-foreground/90">
+                    {video.title}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fadeInUp} className="mt-12 text-center">
+            <Button
+              onClick={handleCTAClick}
+              size="lg"
+              className="h-auto bg-primary px-8 py-5 font-bold text-primary-foreground hover:bg-primary/90"
+            >
+              Quiero unirme al workshop
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
