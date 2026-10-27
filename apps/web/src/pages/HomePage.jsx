@@ -495,7 +495,7 @@ const HomePage = () => {
                 <div className="relative aspect-[9/16] w-full bg-neutral-900">
                   <iframe
                     className="absolute inset-0 h-full w-full border-0"
-                    src={`https://youtube-nocookie.com{video.id}?rel=0&playsinline=1`}
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0&playsinline=1`}
                     title={video.title}
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
