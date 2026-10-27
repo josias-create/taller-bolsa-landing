@@ -797,7 +797,7 @@ const HomePage = () => {
             y con el conocimiento para volver a hacerlo.
             </p>
             <Button onClick={handleCTAClick} size="lg" variant="secondary" className="h-auto bg-white px-7 py-6 text-base font-bold text-primary shadow-xl hover:bg-white/90 sm:text-lg">
-              El 28 de noviembre empiezo a invertir
+              El 28/11 empiezo a invertir
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <p className="mt-5 text-sm font-medium text-primary-foreground/80">
