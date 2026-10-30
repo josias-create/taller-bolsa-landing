@@ -310,7 +310,7 @@ const HomePage = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 animate-pulse">
                 ⚡ Precio Early Bird (Hasta el 20/11)
               </span>
-            </div>
+            </div>  
 
             <div>
               <Button onClick={handleCTAClick} size="lg" className="h-auto bg-primary px-8 py-6 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl active:scale-[0.98]">
@@ -797,7 +797,20 @@ const HomePage = () => {
               <p className="mb-2 text-lg text-muted-foreground">
                 Inversión por persona
               </p>
-              <div className="mb-3 text-6xl font-bold text-primary">USD 97</div>
+              
+              {/* Precios: Original tachado y Early Bird actual */}
+              <div className="mb-3 flex items-center justify-center gap-4">
+                <span className="text-3xl font-medium text-muted-foreground/60 line-through">
+                  USD 117
+                </span>
+                <span className="text-6xl font-bold text-primary animate-pulse-subtle">
+                  USD 97
+                </span>
+              </div>
+              <p className="mb-8 text-sm font-semibold text-primary">
+                ✨ ¡Precio Early Bird por tiempo limitado!
+              </p>
+
               <p className="mb-8 text-muted-foreground">
                 Pago único · Workshop presencial
               </p>
