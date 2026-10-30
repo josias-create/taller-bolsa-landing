@@ -320,7 +320,7 @@ const HomePage = () => {
             </div>  
 
             <div>
-              <Button onClick={handleCTAClick} size="lg" className="h-auto bg-primary px-8 py-6 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl active:scale-[0.98]">
+              <Button onClick={handleScrollToPrice} size="lg" className="h-auto bg-primary px-8 py-6 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl active:scale-[0.98]">
                 Reservar Cupo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -831,7 +831,7 @@ const HomePage = () => {
                   </div>)}
               </div>
 
-              <Button onClick={handleScrollToPrice} size="lg" className="h-auto w-full bg-primary px-6 py-6 text-base font-bold text-primary-foreground shadow-lg hover:bg-primary/90 sm:w-auto sm:text-lg">
+              <Button onClick={handleCTAClick} size="lg" className="h-auto w-full bg-primary px-6 py-6 text-base font-bold text-primary-foreground shadow-lg hover:bg-primary/90 sm:w-auto sm:text-lg">
                 Quiero hacer mi 1era inversión
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
