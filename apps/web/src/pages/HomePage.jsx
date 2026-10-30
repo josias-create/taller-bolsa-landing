@@ -16,6 +16,10 @@ const TESTIMONIAL_VIDEOS = [
   { id: 'uvZmnBvxmWo', title: 'Testimonio 2' },
   { id: 'QtCqYmdmpYY', title: 'Testimonio 3' }
 ];
+// MENSAJES BIEN DIFERENCIADOS
+const MSG_ADS = "Hola! 👋🏼 Deseo inscribirme al workshop Anticonfort Financiero 📈 (Vi tu anuncio en Meta)";
+const MSG_ORGANIC = "Hola! 👋🏼 Deseo inscribirme al workshop Anticonfort Financiero 📈";
+
 const eventDetails = [{
   icon: Calendar,
   text: 'Sábado 28 de noviembre'
@@ -113,15 +117,42 @@ const faqs = [{
 const HomePage = () => {
   const [isMuted, setIsMuted] = useState(true); // Controla el estado del audio
   const [isScrolled, setIsScrolled] = useState(false);
+  const [whatsappUrl, setWhatsappUrl] = useState('');
 
   useEffect(() => {
+    // 1. Control de scroll visual
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener('scroll', handleScroll);
+    // 2. DETECCIÓN ULTRA ESTRICTA DE ANUNCIOS
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source')?.toLowerCase();
+    const utmMedium = urlParams.get('utm_medium')?.toLowerCase();
+    const hasFbclid = urlParams.has('fbclid'); // Inyectado automáticamente SOLO por Meta Ads (pago)
+
+    // Es un anuncio si tiene el identificador de Meta Ads O si tus UTMs dicen explícitamente "ads" o "cpc" (pago por clic)
+    const isStrictlyAds = 
+      hasFbclid || 
+      utmSource === 'meta-ads' || 
+      utmSource === 'fb-ads' ||
+      utmMedium === 'cpc' || 
+      utmMedium === 'ads';
+
+    // Si cumple lo anterior es Anuncio, cualquier otra cosa (Links de Bio, DMs, tráfico directo) es Orgánico
+    const chosenMessage = isStrictlyAds ? MSG_ADS : MSG_ORGANIC;
+    
+    // Construcción de la URL de WhatsApp segura
+    const finalUrl = `https://wa.me{encodeURIComponent(chosenMessage)}`;
+    setWhatsappUrl(finalUrl);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
   const handleCTAClick = () => {
-    window.location.href = WHATSAPP_URL;
+    if (whatsappUrl) {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
   };
+
+
   const fadeInUp = {
     initial: {
       opacity: 0,
