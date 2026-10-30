@@ -152,6 +152,13 @@ const HomePage = () => {
     }
   };
 
+  // Función senior para hacer scroll suave hasta la sección de precios
+  const handleScrollToPrice = () => {
+    const priceSection = document.getElementById('precios');
+    if (priceSection) {
+      priceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const fadeInUp = {
     initial: {
@@ -197,7 +204,7 @@ const HomePage = () => {
             </span>
           </div>
 
-          <Button onClick={handleCTAClick} className="bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary/90 sm:px-6">
+          <Button onClick={handleScrollToPrice} className="bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary/90 sm:px-6">
             Reservar cupo
           </Button>
         </div>
@@ -418,7 +425,7 @@ const HomePage = () => {
               Anticonfort Financiero fue creado para eliminar cada uno de esos
               obstáculos.
             </p>
-            <Button onClick={handleCTAClick} size="lg" className="h-auto bg-primary px-8 py-5 font-bold text-primary-foreground hover:bg-primary/90">
+            <Button onClick={handleScrollToPrice} size="lg" className="h-auto bg-primary px-8 py-5 font-bold text-primary-foreground hover:bg-primary/90">
               Quiero dejar de postergarlo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -551,7 +558,7 @@ const HomePage = () => {
 
           <motion.div {...fadeInUp} className="mt-12 text-center">
             <Button
-              onClick={handleCTAClick}
+              onClick={handleScrollToPrice}
               size="lg"
               className="h-auto bg-primary px-8 py-5 font-bold text-primary-foreground hover:bg-primary/90"
             >
@@ -783,7 +790,7 @@ const HomePage = () => {
       </section>
 
       {/* Precio */}
-      <section className="bg-muted py-20">
+      <section id="precios" className="bg-muted py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div {...fadeInUp}>
             <p className="mb-3 font-bold uppercase tracking-[0.16em] text-primary">
@@ -824,7 +831,7 @@ const HomePage = () => {
                   </div>)}
               </div>
 
-              <Button onClick={handleCTAClick} size="lg" className="h-auto w-full bg-primary px-6 py-6 text-base font-bold text-primary-foreground shadow-lg hover:bg-primary/90 sm:w-auto sm:text-lg">
+              <Button onClick={handleScrollToPrice} size="lg" className="h-auto w-full bg-primary px-6 py-6 text-base font-bold text-primary-foreground shadow-lg hover:bg-primary/90 sm:w-auto sm:text-lg">
                 Quiero hacer mi 1era inversión
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -912,7 +919,7 @@ const HomePage = () => {
             Llega con tu cuenta preparada. Ten la oportunidad de salir con tu primera inversión hecha
             y con el conocimiento para volver a hacerlo.
             </p>
-            <Button onClick={handleCTAClick} size="lg" variant="secondary" className="h-auto bg-white px-7 py-6 text-base font-bold text-primary shadow-xl hover:bg-white/90 sm:text-lg">
+            <Button onClick={hhandleScrollToPrice} size="lg" variant="secondary" className="h-auto bg-white px-7 py-6 text-base font-bold text-primary shadow-xl hover:bg-white/90 sm:text-lg">
               El 28/11 empiezo a invertir
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -958,7 +965,7 @@ const HomePage = () => {
 
       {/* CTA móvil fijo */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-white/95 p-3 shadow-[0_-6px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden">
-        <Button onClick={handleCTAClick} className="h-auto w-full bg-primary py-4 font-bold text-primary-foreground hover:bg-primary/90">
+        <Button onClick={handleScrollToPrice} className="h-auto w-full bg-primary py-4 font-bold text-primary-foreground hover:bg-primary/90">
           Reservar mi cupo · USD 97
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
