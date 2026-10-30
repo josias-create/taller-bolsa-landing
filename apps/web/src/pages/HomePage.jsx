@@ -141,7 +141,7 @@ const HomePage = () => {
     const chosenMessage = isStrictlyAds ? MSG_ADS : MSG_ORGANIC;
     
     // Construcción de la URL de WhatsApp segura
-    const finalUrl = `https://wa.me${encodeURIComponent(chosenMessage)}`;
+    const finalUrl = `https://wa.me/51933477243?text=${encodeURIComponent(chosenMessage)}`;
     setWhatsappUrl(finalUrl);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
