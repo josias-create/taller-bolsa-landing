@@ -797,12 +797,12 @@ const HomePage = () => {
               <p className="mb-2 text-lg text-muted-foreground">
                 Inversión por persona
               </p>
+              <p className="mb-8 text-sm font-medium text-muted-foreground/60 line-through">
+                USD 117
+              </p>
               
               {/* Precios: Original tachado y Early Bird actual */}
               <div className="mb-3 flex items-center justify-center gap-4">
-                <span className="text-3xl font-medium text-muted-foreground/60 line-through">
-                  USD 117
-                </span>
                 <span className="text-6xl font-bold text-primary animate-pulse-subtle">
                   USD 97
                 </span>
