@@ -963,13 +963,13 @@ const HomePage = () => {
         </div>
       </footer>
 
-      {/* CTA móvil fijo */}
+      {/* CTA móvil fijo 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-white/95 p-3 shadow-[0_-6px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden">
         <Button onClick={handleScrollToPrice} className="h-auto w-full bg-primary py-4 font-bold text-primary-foreground hover:bg-primary/90">
           Reservar mi cupo · USD 97
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-      </div>
+      </div>*/}
     </>;
 };
 export default HomePage;
