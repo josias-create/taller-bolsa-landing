@@ -301,8 +301,15 @@ const HomePage = () => {
           duration: 0.6,
           delay: 0.25
         }}>
-            <div className="mb-6 inline-flex items-center rounded-xl border-2 border-primary bg-primary/20 px-6 py-3 backdrop-blur-sm">
-              <span className="text-2xl font-bold text-white">USD 97</span>
+            {/* Contenedor de Precios y Etiqueta Early Bird */}
+            <div className="mb-6 inline-flex flex-col items-center gap-1 rounded-2xl border-2 border-primary bg-primary/20 px-8 py-4 backdrop-blur-sm">
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl font-black text-white">97 USD</span>
+                <span className="text-sm font-medium text-white/50 line-through">117 USD</span>
+              </div>
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 animate-pulse">
+                ⚡ Precio Early Bird (Hasta el 20/11)
+              </span>
             </div>
 
             <div>
