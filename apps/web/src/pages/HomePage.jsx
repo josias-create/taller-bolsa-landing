@@ -919,7 +919,7 @@ const HomePage = () => {
             Llega con tu cuenta preparada. Ten la oportunidad de salir con tu primera inversión hecha
             y con el conocimiento para volver a hacerlo.
             </p>
-            <Button onClick={hhandleScrollToPrice} size="lg" variant="secondary" className="h-auto bg-white px-7 py-6 text-base font-bold text-primary shadow-xl hover:bg-white/90 sm:text-lg">
+            <Button onClick={handleScrollToPrice} size="lg" variant="secondary" className="h-auto bg-white px-7 py-6 text-base font-bold text-primary shadow-xl hover:bg-white/90 sm:text-lg">
               El 28/11 empiezo a invertir
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
