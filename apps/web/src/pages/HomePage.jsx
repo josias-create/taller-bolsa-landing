@@ -147,6 +147,11 @@ const HomePage = () => {
   }, []);
   
   const handleCTAClick = () => {
+     // 1. Registra el evento Lead en Meta Pixel si está disponible
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+
     if (whatsappUrl) {
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     }
