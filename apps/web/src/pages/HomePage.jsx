@@ -238,7 +238,7 @@ const HomePage = () => {
 
             <img src="https://horizons-cdn.hostinger.com/b85fa9a3-40ea-4add-9fa4-e9cc054125ad/logo-anticonfort-financiero-blanco-g8INQ.png" alt="Anticonfort Financiero" className="mx-auto mb-7 w-[70%] sm:w-full max-w-xs md:max-w-sm" />
 
-            <h1 className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mx-auto mb-6 max-w-2xl text-xl font-bold leading-snug text-white sm:text-2xl md:text-3xl lg:text-4xl">
               Realiza tu primera inversión en vivo y crea tu plan de inversiones en una sola mañana de la mano de expertos,
               <span className="mt-2 block text-primary">
                 “aún si no tienes conocimientos.”
