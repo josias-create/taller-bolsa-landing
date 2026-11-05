@@ -233,15 +233,15 @@ const HomePage = () => {
           duration: 0.6
         }}>
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-primary sm:text-base">
-              Workshop presencial y práctico
+              Workshop presencial
             </p>
 
-            <img src="https://horizons-cdn.hostinger.com/b85fa9a3-40ea-4add-9fa4-e9cc054125ad/logo-anticonfort-financiero-blanco-g8INQ.png" alt="Anticonfort Financiero" className="mx-auto mb-7 w-full max-w-2xl" />
+            <img src="https://horizons-cdn.hostinger.com/b85fa9a3-40ea-4add-9fa4-e9cc054125ad/logo-anticonfort-financiero-blanco-g8INQ.png" alt="Anticonfort Financiero" className="mx-auto mb-7 w-[70%] sm:w-full max-w-xs md:max-w-sm" />
 
             <h1 className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-              El workshop donde dejarás de decir:
+              Realiza tu primera inversión en vivo y crea tu plan de inversiones en una sola mañana de la mano de expertos,
               <span className="mt-2 block text-primary">
-                “Algún día voy a empezar a invertir”
+                “aún si no tienes conocimientos.”
               </span>
             </h1>
 
