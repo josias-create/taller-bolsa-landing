@@ -313,7 +313,7 @@ const HomePage = () => {
           duration: 0.6,
           delay: 0.25
         }}>
-            {/* Contenedor de Precios y Etiqueta Early Bird */}
+            {/* Contenedor de Precios y Etiqueta Early Bird 
             <div className="mb-6 inline-flex flex-col items-center gap-1 rounded-2xl border-2 border-primary bg-primary/20 px-8 py-4 backdrop-blur-sm">
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-black text-white">97 USD</span>
@@ -322,7 +322,7 @@ const HomePage = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 animate-pulse">
                 ⚡ Precio Early Bird (Hasta el 20/11)
               </span>
-            </div>  
+            </div> */} 
 
             <div>
               <Button onClick={handleScrollToPrice} size="lg" className="h-auto bg-primary px-8 py-6 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl active:scale-[0.98]">
