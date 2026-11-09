@@ -281,7 +281,7 @@ const HomePage = () => {
                 )}
               </div>
             </motion.div>
-            <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-white/90 md:text-2xl">
+            <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-white/90 md:text-2xl">
               En cuatro horas harás tu primera inversión en bolsa con dinero
               real y aprenderás, paso a paso, cómo declarar tus ganancias en
               SUNAT.
