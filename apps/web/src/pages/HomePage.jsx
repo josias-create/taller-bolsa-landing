@@ -208,10 +208,10 @@ const HomePage = () => {
               Anticonfort Financiero
             </span>
           </div>
-
+          {/*
           <Button onClick={handleScrollToPrice} className="bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary/90 sm:px-6">
             Reservar cupo
-          </Button>
+          </Button>*/}
         </div>
       </motion.header>
 
