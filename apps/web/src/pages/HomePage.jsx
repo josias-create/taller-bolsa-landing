@@ -195,7 +195,7 @@ const HomePage = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      {/* Header fijo */}
+      {/* Header fijo 
       <motion.header initial={{
       y: -100
     }} animate={{
@@ -214,6 +214,7 @@ const HomePage = () => {
           </Button>*/}
         </div>
       </motion.header>
+      */}
 
       {/* Hero */}
       <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
