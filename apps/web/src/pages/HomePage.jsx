@@ -208,14 +208,14 @@ const HomePage = () => {
               Anticonfort Financiero
             </span>
           </div>
-          {/*
+  
           <Button onClick={handleScrollToPrice} className="bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary/90 sm:px-6">
             Reservar cupo
-          </Button>*/}
+          </Button>
         </div>
       </motion.header>
       */}
-
+      
       {/* Hero */}
       <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{
