@@ -215,7 +215,7 @@ const HomePage = () => {
         </div>
       </motion.header>
       */}
-      
+
       {/* Hero */}
       <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{
@@ -223,7 +223,7 @@ const HomePage = () => {
       }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85" />
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 pt-28 text-center sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 pt-16 sm:pt-24 text-center sm:px-6 lg:px-8">
           <motion.div initial={{
           opacity: 0,
           y: 28
